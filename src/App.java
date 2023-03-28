@@ -3,7 +3,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.security.Key;
 import java.util.List;
 import java.util.Map;
 
@@ -22,14 +21,30 @@ public class App {
         // System.out.println(moviesList);
 
         for(Map<String, String> movie : moviesList){
-        System.out.println(movie.get("fullTitle"));
-        System.out.println("Rank" + ":" + movie.get("rank"));
-        System.out.println("Ano de Lançamento" + ":" + movie.get("year"));
+        System.out.println("\u001b[37;1m \u001b[44;1m" + movie.get("fullTitle") + "\u001b[0m");
+        System.out.println("\u001b[1m Rank:\u001b[m " + movie.get("rank"));
+        System.out.println("\u001b[1m Ano de Lançamento: \u001b[m" + movie.get("year"));
         System.out.println(movie.get("image"));
-        System.out.println("Elenco" + ":" + movie.get("crew"));
-        System.out.println("Avaliação Geral" + ":" + movie.get("imDbRating"));
-        System.out.println("Contagem de Avaliações" + ":" + movie.get("imDbRatingCount"));
-        so
+        System.out.println("\u001b[1m Elenco: \u001b[m" + movie.get("crew"));
+        System.out.println("\u001b[1m Contagem de Avaliações: \u001b[m" + movie.get("imDbRatingCount"));
+        int floatToIntDbRating = (int) Float.parseFloat(movie.get("imDbRating"));
+        System.out.println("\u001b[1m Avaliação: \u001b[m" + floatToIntDbRating);
+        int nEstrelas = 0;
+        if (floatToIntDbRating <= 2) {
+            nEstrelas = 1;
+        } else if (floatToIntDbRating <= 4) {
+            nEstrelas = 2;
+        } else if (floatToIntDbRating <= 6) {
+            nEstrelas = 3;
+        } else if (floatToIntDbRating <= 8) {
+            nEstrelas = 4;
+        } else {
+            nEstrelas = 5;
+        }
+        for (int i = 0; i < nEstrelas; i++) {
+            System.out.print("\u2B50");
+        }
+        System.out.println("\n");
        }
     }
 }
