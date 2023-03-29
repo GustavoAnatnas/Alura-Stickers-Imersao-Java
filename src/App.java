@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -45,6 +47,14 @@ public class App {
             System.out.print("\u2B50");
         }
         System.out.println("\n");
+
+        String urlImage = movie.get("image");
+        String title = movie.get("title");
+        String archiveName = title.replace(":", "-") + ".png";
+
+        InputStream inputStream = new URL(urlImage).openStream();
+        var generateSticker = new BuildStickers();
+        generateSticker.build(inputStream, archiveName);
        }
     }
 }

@@ -4,13 +4,15 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+// import java.net.URL;
 
 import javax.imageio.ImageIO;
 
 public class BuildStickers {
-    public void build() throws IOException {
+    public void build(InputStream inputStream, String nomeArquivoString) throws IOException {
         //leitura da imagem
-        BufferedImage originalImage = ImageIO.read(new File("imagem.jpg"));
+        BufferedImage originalImage = ImageIO.read(inputStream);
         //cria nova imagem em memória com transparencia e com tamanho novo
         int width = originalImage.getWidth();
         int height = originalImage.getHeight();
@@ -28,11 +30,11 @@ public class BuildStickers {
         graphics.drawString("Alura Cursos Online de Tecnologia", 10, height + 50);
 
         //criar a imagem em um novo arquivo
-        ImageIO.write(newImage, "png", new File("saida/imagem.png"));
+        ImageIO.write(newImage, "png", new File(nomeArquivoString));
         
     }
-    public static void main(String[] args) throws IOException {
-        var builder = new BuildStickers();
-        builder.build();
-    }
+    // public static void main(String[] args) throws IOException {
+    //     var builder = new BuildStickers();
+    //     builder.build();
+    // }
 }
