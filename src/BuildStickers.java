@@ -1,3 +1,4 @@
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,8 +15,10 @@ public class BuildStickers {
         int newHeight = height + 200;
 
         BufferedImage newImage = new BufferedImage(width, newHeight, BufferedImage.TRANSLUCENT);
-        
+
         //copia a imagem original para nova imagem(em memoria)
+        Graphics2D graphics = newImage.createGraphics();
+        graphics.drawImage(originalImage, 0, 0, null);
         //escrever uma frase na imagem
         //criar a imagem em um novo arquivo
         //
