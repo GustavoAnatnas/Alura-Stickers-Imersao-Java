@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -20,7 +22,17 @@ public class BuildStickers {
         Graphics2D graphics = newImage.createGraphics();
         graphics.drawImage(originalImage, 0, 0, null);
         //escrever uma frase na imagem
+        var font = new Font(Font.SANS_SERIF, Font.BOLD, 60);
+        graphics.setFont(font);
+        graphics.setColor(Color.CYAN);
+        graphics.drawString("Alura Cursos Online de Tecnologia", 10, height + 50);
+
         //criar a imagem em um novo arquivo
-        //
+        ImageIO.write(newImage, "png", new File("saida/imagem.png"));
+        
+    }
+    public static void main(String[] args) throws IOException {
+        var builder = new BuildStickers();
+        builder.build();
     }
 }
