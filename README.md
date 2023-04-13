@@ -1,9 +1,10 @@
-# README
-
-## Aviso
-
-**Este README ainda está em construção.**
-
-<img src="/foguete.gif">
-
-<a href="https://www.flaticon.com/br/icones-animados-gratis/foguete" title="foguete ícones animados">Foguete ícones animados criados por Freepik - Flaticon</a>
+# :construction: README em construção ! :construction:
+<!-- Olá, Tryber!
+Esse é apenas um arquivo inicial para o README do seu projeto.
+É essencial que você preencha esse documento por conta própria, ok?
+Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+:warning: IMPORTANTE: você precisa deixar nítido:
+- quais arquivos/pastas foram desenvolvidos por você; 
+- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
+- quais arquivos/pastas foram desenvolvidos pela Trybe.
+-->
